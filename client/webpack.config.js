@@ -75,6 +75,7 @@ const config = {
       COMMIT_HASH: process.env.SOURCE_VERSION || '',
       NODE_ENV: 'production',
     }),
+    new webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /ja/),
     new MiniCssExtractPlugin({
       filename: 'styles/[name].css',
     }),
